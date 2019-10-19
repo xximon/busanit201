@@ -8,3 +8,17 @@
  [x] List
  [x] Write
  [x] Detail
+
+
+
+---
+git add .
+git commit -m 'commit msg'
+git push origin master
+
+
+//update
+git pull origin master
+or
+git fetch origin master
+---
