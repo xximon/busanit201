@@ -2,6 +2,9 @@ package com.example.todosampleapp;
 
 import android.app.Application;
 
+import com.example.todosampleapp.logic.local.AppDatabaseProvider;
+import com.facebook.stetho.Stetho;
+
 public class MyApp extends Application {
 
     @Override
@@ -10,10 +13,12 @@ public class MyApp extends Application {
         initRoom();
         initStetho();
     }
-    private void initStetho(){
-
+    private void initStetho() {
+        Stetho.initializeWithDefaults(this);
     }
-    private void initRoom(){
 
+    private void initRoom() {
+        // 1회 생성
+        AppDatabaseProvider.getINSTANCE(getApplicationContext());
     }
 }
